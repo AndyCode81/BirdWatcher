@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BirdWatch Network Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>BirdWatch Network Monitor</h1>
+  </header>
+
+  <main>
+    <section id="metrics">
+      <div class="card">Packets: <span id="packets">0</span></div>
+      <div class="card">Connections: <span id="connections">0</span></div>
+      <div class="card">Latency: <span id="latency">0ms</span></div>
+    </section>
+
+    <section id="traffic-visualization">
+      <canvas id="trafficChart" width="800" height="300"></canvas>
+    </section>
+
+    <section id="alerts">
+      <h2>Alerts</h2>
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Severity</th><th>Description</th></tr>
+        </thead>
+        <tbody id="alertTableBody">
+          <tr><td>--</td><td>--</td><td>--</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
