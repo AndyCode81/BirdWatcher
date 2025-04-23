@@ -1,3 +1,9 @@
+# 
+# Author: Andy Ayala
+# Date: April 23, 2025
+# Description: This is a test script for the BirdWatch Live Anomaly Detector. It uses a WebSocket server to send real-time anomaly detection results to the front-end.
+# Note: This is test code and is not related to Isaiah Goad's back-end implementation.
+
 from scapy.all import sniff
 import joblib
 import pandas as pd
@@ -6,6 +12,7 @@ from datetime import datetime
 from fastapi import FastAPI, WebSocket
 import uvicorn
 
+# Load the pre-trained anomaly detection model
 model = joblib.load("/Users/andyayala/Desktop/BirdWatcher/BirdWatch_Live_Anomaly/anomaly_model_ocsvm.pkl")
 
 app = FastAPI()
@@ -57,7 +64,7 @@ import threading
 import time
 
 if __name__ == "__main__":
-    # Start packet sniffing AFTER a tiny delay to ensure websocket route is ready
+    # Start packet sniffing AFTER a tiny delay to ensure WebSocket route is ready
     def delayed_sniff():
         time.sleep(1)
         start_sniffing()

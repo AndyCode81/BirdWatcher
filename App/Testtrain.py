@@ -1,3 +1,9 @@
+i# 
+# Author: Andy Ayala
+# Date: April 23, 2025
+# Description: This script demonstrates a test implementation of anomaly detection using the Isolation Forest algorithm. 
+# Note: This is a standalone test script and is not integrated with Isaiah Goad's back-end implementation.
+
 import numpy as np
 from sklearn.ensemble import IsolationForest
 

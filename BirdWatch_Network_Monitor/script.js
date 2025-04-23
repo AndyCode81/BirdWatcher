@@ -1,3 +1,12 @@
+// 
+// Author: Andy Ayala
+// Date: April 23, 2025
+// Description: This script handles the real-time updates for the BirdWatch Network Monitor, including traffic visualization and metrics updates.
+//
+// Software Folder Notes:
+// 1. Code folder structure is organized to be intuitive for their use and function in the design.
+// 2. Portions of the code sourced from third-party libraries (e.g., Chart.js) are clearly identified in comments.
+// 3. Any modifications to third-party code are documented with comments explaining the changes.
 
 const ctx = document.getElementById('trafficChart').getContext('2d');
 const trafficChart = new Chart(ctx, {

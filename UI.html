@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta information for character encoding and title -->
   <meta charset="UTF-8">
   <title>BirdWatch Dashboard</title>
+
+  <!-- Inline styles for the dashboard -->
   <style>
+    /* Define root variables for consistent theming */
     :root {
       --primary-color: #0d6efd;
       --background: #121212;
@@ -12,12 +16,14 @@
       --border-color: #2c2c2c;
     }
 
+    /* Reset default margins and paddings */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* General body styling */
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--background);
@@ -25,11 +31,13 @@
       padding: 40px;
     }
 
+    /* Container for the main content */
     .container {
       max-width: 1000px;
       margin: auto;
     }
 
+    /* Header styling */
     .header {
       text-align: center;
       font-size: 36px;
@@ -38,6 +46,7 @@
       color: var(--primary-color);
     }
 
+    /* Grid layout for dashboard cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -45,6 +54,7 @@
       justify-items: center;
     }
 
+    /* Styling for individual cards */
     .card {
       width: 180px;
       height: 180px;
@@ -59,22 +69,26 @@
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
+    /* Hover effect for cards */
     .card:hover {
       transform: scale(1.05);
       border-color: var(--primary-color);
     }
 
+    /* Icon styling inside cards */
     .icon {
       font-size: 42px;
       margin-bottom: 10px;
       color: var(--primary-color);
     }
 
+    /* Label styling inside cards */
     .label {
       font-weight: 600;
       font-size: 16px;
     }
 
+    /* Section styling for additional content */
     .section {
       background-color: var(--card-bg);
       border: 2px solid var(--border-color);
@@ -83,6 +97,7 @@
       margin-top: 40px;
     }
 
+    /* Input field styling */
     input {
       width: 100%;
       padding: 12px;
@@ -93,6 +108,7 @@
       margin-top: 10px;
     }
 
+    /* Button styling */
     button {
       margin-top: 12px;
       background-color: var(--primary-color);
@@ -104,16 +120,19 @@
       font-weight: bold;
     }
 
+    /* Button hover effect */
     button:hover {
       background-color: #0056d2;
     }
 
+    /* Table styling */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
 
+    /* Table cell styling */
     th, td {
       border: 1px solid var(--border-color);
       padding: 10px;
@@ -121,13 +140,14 @@
       background-color: #2a2a2a;
     }
 
+    /* Footer buttons styling */
     .footer-buttons {
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
     }
 
-    /* Chatbot icon */
+    /* Chatbot button styling */
     .chatbot {
       position: fixed;
       bottom: 20px;
@@ -147,7 +167,7 @@
       z-index: 1000;
     }
 
-    /* Chatbot window */
+    /* Chatbot window styling */
     .chat-window {
       display: none;
       position: fixed;
@@ -164,6 +184,7 @@
       overflow: hidden;
     }
 
+    /* Chatbot header styling */
     .chat-header {
       background-color: var(--primary-color);
       padding: 10px;
@@ -171,6 +192,7 @@
       font-weight: bold;
     }
 
+    /* Chat messages container styling */
     .chat-messages {
       flex: 1;
       padding: 10px;
@@ -178,11 +200,13 @@
       font-size: 14px;
     }
 
+    /* Chat input container styling */
     .chat-input {
       display: flex;
       border-top: 1px solid var(--border-color);
     }
 
+    /* Chat input field styling */
     .chat-input input {
       flex: 1;
       border: none;
@@ -191,6 +215,7 @@
       color: white;
     }
 
+    /* Chat input button styling */
     .chat-input button {
       background-color: var(--primary-color);
       border: none;
@@ -203,10 +228,13 @@
 </head>
 <body>
 
+  <!-- Main container for the dashboard -->
   <div class="container">
 
-    <!-- Main Dashboard -->
+    <!-- Header section -->
     <div class="header">BirdWatch</div>
+
+    <!-- Grid layout for dashboard cards -->
     <div class="grid">
       <div class="card">
         <div class="icon">🌐</div>
@@ -226,7 +254,7 @@
       </div>
     </div>
 
-    <!-- Network Anomaly Section -->
+    <!-- Section for network anomaly monitoring -->
     <div class="section">
       <h2>Network Anomaly Monitoring</h2>
       <p>Connects to Wireshark and an AI model to detect abnormal activity on your network in real time.</p>
@@ -251,10 +279,10 @@
 
   </div>
 
-  <!-- Chatbot Button -->
+  <!-- Chatbot button -->
   <button class="chatbot" onclick="toggleChat()">💬</button>
 
-  <!-- Chatbot Window -->
+  <!-- Chatbot window -->
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">BirdBot Assistant</div>
     <div class="chat-messages" id="chatMessages">
@@ -266,12 +294,15 @@
     </div>
   </div>
 
+  <!-- JavaScript for chatbot functionality -->
   <script>
+    // Function to toggle the chatbot window
     function toggleChat() {
       const chat = document.getElementById('chatWindow');
       chat.style.display = chat.style.display === 'none' || chat.style.display === '' ? 'flex' : 'none';
     }
 
+    // Function to handle sending messages in the chatbot
     function sendMessage() {
       const input = document.getElementById('chatInput');
       const msg = input.value.trim();

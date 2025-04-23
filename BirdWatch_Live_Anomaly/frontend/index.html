@@ -1,25 +1,42 @@
+<!-- 
+Author: Andy Ayala
+Date: April 23, 2025
+Description: This is the front-end for the BirdWatch Live Anomaly Detector, which displays real-time anomaly detection logs using WebSocket communication.
+
+Software Folder Notes:
+1. Code folder structure is organized to be intuitive for their use and function in the design.
+2. This file is part of the Software Outline document, which describes all software files, functions, and key variables.
+3. Portions of the code sourced from third-party libraries (e.g., Tailwind CSS) are clearly identified in comments.
+4. Any modifications to third-party code are documented with comments explaining the changes.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>BirdWatch Live</title>
+  <!-- Tailwind CSS for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white">
   <div class="p-4">
     <h1 class="text-2xl font-bold text-blue-400 mb-4">BirdWatch Live Anomaly Detector</h1>
+    <!-- Log container for displaying real-time anomaly detection logs -->
     <div id="log" class="space-y-2"></div>
   </div>
 
   <script>
+    // Establish WebSocket connection to the server
     const socket = new WebSocket("ws://localhost:8000/ws");
+
+    // Handle incoming messages from the WebSocket
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
       const log = document.getElementById("log");
       const entry = document.createElement("p");
-      entry.textContent = `${data.time} - ${data.anomaly ? "🚨 Anomaly" : "✅ Normal"}`;
+      entry.textContent = `${data.time} - ${data.anomaly ? " Anomaly" : " Normal"}`;
       entry.className = data.anomaly ? "text-red-400" : "text-green-400";
-      log.prepend(entry);
+      log.prepend(entry); // Add new log entry to the top of the log container
     };
   </script>
 </body>

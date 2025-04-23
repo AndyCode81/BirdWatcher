@@ -1,3 +1,13 @@
+/* 
+Author: Andy Ayala
+Date: April 23, 2025
+Description: This stylesheet defines the styles for the BirdWatch Network Monitor project, including layout, colors, and table formatting.
+
+Software Folder Notes:
+1. Code folder structure is organized to be intuitive for their use and function in the design.
+2. Portions of the styles are customized for the project and are clearly documented.
+3. Any modifications to third-party styles or examples are noted with comments explaining the changes.
+*/
 
 body {
   background-color: #121212;
