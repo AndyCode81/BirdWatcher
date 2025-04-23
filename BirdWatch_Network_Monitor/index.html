@@ -1,3 +1,19 @@
+<!-- 
+Author: Andy Ayala
+Date: April 23, 2025
+Description: This is the main HTML file for the BirdWatch Network Monitor project, providing real-time metrics, traffic visualization, and alert monitoring.
+
+Software Folder Notes:
+1. Code folder structure and files are organized to be intuitive for their use and function in the design.
+2. This file is part of the Software Outline document, which describes all software files, functions, and key variables.
+3. Portions of the code sourced from third-party libraries (e.g., Chart.js) are clearly identified in comments.
+4. Any modifications to third-party code are documented with comments explaining the changes.
+5. Software folder – Contains the base code, pseudo code, outline, flowcharts, etc.
+   a. Code folder structure and files should be organized and labeled to be intuitive as to their use and function in the design.
+   b. Include within the Software folder a Software Outline document that at a minimum, describes all software files, all functions, and all key variables (with a description of their functionality and use).
+   c. All portions of the code that are from other sources must be clearly identified as such through use of comments within the code. It should be clear in the code what portions of the code were written by team members and what portions of the code were obtained from a third-party source.
+   d. Any code modified from sample code, examples, etc., must be identified as such with a brief description of how it was modified or will be modified as part of your design effort. Notes describing the modification should be included as comments within the code.
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -5,6 +21,7 @@
   <meta charset="UTF-8">
   <title>BirdWatch Network Monitor</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js for traffic visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -13,16 +30,19 @@
   </header>
 
   <main>
+    <!-- Metrics Section -->
     <section id="metrics">
       <div class="card">Packets: <span id="packets">0</span></div>
       <div class="card">Connections: <span id="connections">0</span></div>
       <div class="card">Latency: <span id="latency">0ms</span></div>
     </section>
 
+    <!-- Traffic Visualization Section -->
     <section id="traffic-visualization">
       <canvas id="trafficChart" width="800" height="300"></canvas>
     </section>
 
+    <!-- Alerts Section -->
     <section id="alerts">
       <h2>Alerts</h2>
       <table>
@@ -36,6 +56,7 @@
     </section>
   </main>
 
+  <!-- Custom JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
